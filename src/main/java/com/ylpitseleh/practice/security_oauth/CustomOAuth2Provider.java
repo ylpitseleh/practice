@@ -1,4 +1,4 @@
-package com.ylpitseleh.practice.security;
+package com.ylpitseleh.practice.security_oauth;
 
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;

@@ -1,7 +1,6 @@
-package com.ylpitseleh.practice.security;
+package com.ylpitseleh.practice.security_oauth;
 
-import com.ylpitseleh.practice.service.CustomOAuth2UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ylpitseleh.practice.service_oauth.CustomOAuth2UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static com.ylpitseleh.practice.security.SocialType.*;
+import static com.ylpitseleh.practice.security_oauth.SocialType.*;
 
 /**
 OAuth2 인증 설정의 가장 핵심되는 부분입니다.

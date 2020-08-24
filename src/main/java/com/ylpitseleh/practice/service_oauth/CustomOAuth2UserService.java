@@ -1,4 +1,4 @@
-package com.ylpitseleh.practice.service;
+package com.ylpitseleh.practice.service_oauth;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.convert.converter.Converter;

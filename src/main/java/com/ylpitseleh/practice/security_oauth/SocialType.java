@@ -1,4 +1,4 @@
-package com.ylpitseleh.practice.security;
+package com.ylpitseleh.practice.security_oauth;
 
 public enum SocialType {
 

@@ -1,4 +1,4 @@
-package com.ylpitseleh.practice.security;
+package com.ylpitseleh.practice.security_oauth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
