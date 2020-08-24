@@ -15,6 +15,10 @@ import java.util.List;
  */
 public interface PostsRepository extends JpaRepository<Posts, Long> {
 
+    /*
+    Spring Data JPA에서 제공하지 않는 메소드는 이처럼 쿼리로 작성해도 됨.
+    이 코드는 Spring Data JPA에서 제공하는 기본 메소드만으로 해결할 수 있으나, @Query가 훨씬 가독성이 좋다.
+     */
     @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
     List<Posts> findAllDesc();
 
