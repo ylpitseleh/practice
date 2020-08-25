@@ -28,7 +28,7 @@ public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
 
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles="USER") // 가짜로 인증된 사용자 생성
     @Test
     public void hello가_리턴된다() throws Exception {
         String hello = "hello";
