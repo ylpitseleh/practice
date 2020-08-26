@@ -15,7 +15,8 @@ import javax.servlet.http.HttpSession;
  * HandlerMethodArgumentResolver는 한 가지 기능을 지원한다.
  * 바로 조건에 맞는 메소드가 있다면 HandlerMethodArgumentResolver의 구현체가 지정한 값으로 해당 메소드의 파라미터로 넘길 수 있다.
  */
-//@LoginUser를 사용하기 위한 환경 구성
+
+// @LoginUser를 파라미터에서 사용하기 위한 환경 구성 (LoginUser.java를 위한 클래스 1.LoginUserArgumentResolver.java 2. WebConfig.java)
 @RequiredArgsConstructor
 @Component
 public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver {

@@ -5,6 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 /**
+ * CustomOAuth2UserService 클래스에서 httpSession.setAttribute("user", new SessionUser(user)); setAttribute한 세션을 가져올 때
  * SessionUser user = (SessionUser) httpSession.getAttribute("user"); 세션값이 필요할 때마다 직접 세션에서 가져와야 함. 같은 코드 반복됨.
  * 이 부분을 메소드 인자로 세션값을 바로 받을 수 있게 변경.
  */
