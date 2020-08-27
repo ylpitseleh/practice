@@ -5,7 +5,10 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.util.Map;
-
+/**
+ * OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스이다.
+ * 이후 네이버 등 다른 소셜 로그인도 이 클래스를 사용한다.
+ */
 @Getter
 public class OAuthAttributes {
     private Map<String, Object> attributes;
@@ -61,7 +64,7 @@ public class OAuthAttributes {
 
     /*
     User 엔티티를 생성한다.(생성시점 : 처음 가입할 때)
-    가입할 때의 기본 권한을 GUEST로 주기 위해 role 빌더값에는 Role.GUEST를 사용한다.
+    가입할 때의 기본 권한을 GUEST로 주기 위해 role 빌더값에는 Role.GUEST를 사용한다. => USER로 바꿨다. 가입하면 Role은 USER가 되는게 자연스러우니까.
     OAuthAttributes 클래스 생성이 끝났으면 같은 패키지에 SessionUser 클래스를 생성한다.
     */
     public User toEntity() {
@@ -69,7 +72,8 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                //.role(Role.GUEST)
+                .role(Role.USER)
                 .build();
     }
 }

@@ -4,7 +4,7 @@ import com.ylpitseleh.practice.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+// 게시글 저장(save)용 DTO
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
@@ -19,7 +19,7 @@ public class PostsSaveRequestDto {
         this.author = author;
     }
 
-    public Posts toEntity() {
+    public Posts toEntity() { // PostsSaveRequestDto를 Posts화 해서 DB에 넣어줘야 하니까 toEntity 인듯?
         return Posts.builder()
                 .title(title)
                 .content(content)

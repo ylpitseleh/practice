@@ -12,6 +12,8 @@ import java.util.List;
  * HandlerMethodArgumentResolver는 항상 WebMvcConfigurer의 addArgumentResolvers()를 통해 추가해야 한다.
  * 다른 HandlerMethodArgumentResolver가 필요하다면 같은 방식으로 추가해주면 된다.
  */
+
+// @LoginUser를 파라미터에서 사용하기 위한 환경 구성 (LoginUser.java를 위한 클래스 1.LoginUserArgumentResolver.java 2. WebConfig.java)
 @RequiredArgsConstructor
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

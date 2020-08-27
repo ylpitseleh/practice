@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+// 모든 게시글 불러오기(findAll)용 DTO
 @Getter
 public class PostsListResponseDto {
     private Long id;
