@@ -10,6 +10,7 @@ import java.lang.annotation.Target;
  * 이 부분을 메소드 인자로 세션값을 바로 받을 수 있게 변경.
  */
 /*
+// @LoginUser를 파라미터에서 사용하기 위한 환경 구성 (LoginUser.java를 위한 클래스 1.LoginUserArgumentResolver.java 2. WebConfig.java)
 @Target(ElementType.PARAMETER) : 이 어노테이션이 생성될 수 있는 위치를 지정. PARAMETER로 지정했으니 메소드의 파라미터로 선언된 객체에서만 사용할 수 있음.
                                  이 외에도 클래스 선언문에 쓸 수 있는 TYPE등이 있음.
  */

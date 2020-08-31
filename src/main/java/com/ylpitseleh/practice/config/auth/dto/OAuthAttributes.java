@@ -32,25 +32,28 @@ public class OAuthAttributes {
      * 윈도우 로컬에 저장된 내 이름이 나온다. 변수명을 userMyNameAtributeName으로 변경했다.
      */
     // OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나를 변환해야 한다.
-    public static OAuthAttributes of(String registrationId, String userMyNameAttributeName, Map<String, Object> attributes) {
+    public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
         if("naver".equals(registrationId)) {
             return ofNaver("id", attributes);
         }
+        if("kakao".equals(registrationId)){
+            return ofKakao("id", attributes);
+        }
 
-        return ofGoogle(userMyNameAttributeName, attributes);
+        return ofGoogle(userNameAttributeName, attributes);
     }
 
-    private static OAuthAttributes ofGoogle(String userMyNameAttributeName, Map<String, Object> attributes) {
+    private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
                 .email((String) attributes.get("email"))
                 .picture((String) attributes.get("picture"))
                 .attributes(attributes)
-                .nameAttributeKey(userMyNameAttributeName)
+                .nameAttributeKey(userNameAttributeName)
                 .build();
     }
 
-    private static OAuthAttributes ofNaver(String userMyNameAttributeName, Map<String, Object> attributes) {
+    private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
         return OAuthAttributes.builder()
@@ -58,7 +61,20 @@ public class OAuthAttributes {
                 .email((String) response.get("email"))
                 .picture((String) response.get("profile_image"))
                 .attributes(response)
-                .nameAttributeKey(userMyNameAttributeName)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
+    }
+
+    private static OAuthAttributes ofKakao(String userNameAttributeName, Map<String, Object> attributes) {
+        Map<String,Object> response = (Map<String, Object>) attributes.get("kakao_account");
+        Map<String, Object> profile = (Map<String, Object>) response.get("profile");
+
+        return OAuthAttributes.builder()
+                .name((String) profile.get("nickname"))
+                .email((String) response.get("email"))
+                .picture((String) profile.get("profile_image_url"))
+                .attributes(attributes)
+                .nameAttributeKey(userNameAttributeName)
                 .build();
     }
 

@@ -42,13 +42,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                                 구글의 경우 기본적으로 코드를 지원하지만, 네이버 카카오 등은 기본 지원하지 않는다. 구글의 기본 코드는 "sub"이다.
                                 이후 네이버 로그인과 구글 로그인을 동시 지원할 때 사용된다.
          */
-        String userMyNameAttributeName = userRequest.getClientRegistration().getProviderDetails()
+        String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails()
                 .getUserInfoEndpoint().getUserNameAttributeName();
         /*
         OAuthAttributes : OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스. 네이버 등 다른 소셜 로그인도 이 클래스를 사용한다.
          */
-        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userMyNameAttributeName, oAuth2User.getAttributes());
-
+        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+        System.out.println("여기다 ! = "+registrationId+" "+userNameAttributeName+" "+oAuth2User.getAttributes());
         User user = saveOrUpdate(attributes);
 
         /*
