@@ -62,6 +62,7 @@ dependencies {
 
     compile("org.mariadb.jdbc:mariadb-java-client")
 
+
     annotationProcessor('org.projectlombok:lombok') // 이거 추가 안 하면 getter, builder 적용 안 되서 에러남 ㅠㅠ
     testAnnotationProcessor('org.projectlombok:lombok')
 
