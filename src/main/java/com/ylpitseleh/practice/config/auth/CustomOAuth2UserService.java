@@ -48,7 +48,9 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuthAttributes : OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스. 네이버 등 다른 소셜 로그인도 이 클래스를 사용한다.
          */
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
-        System.out.println("여기다 ! = "+registrationId+" "+userNameAttributeName+" "+oAuth2User.getAttributes());
+
+        //System.out.println("여기다 ! = "+registrationId+" "+userNameAttributeName+" "+oAuth2User.getAttributes());
+        // 이걸 Sysout으로 찍어보고 나니까 email이 안 들어가고 있다는걸 알아서 application-oauth.properties의 kakao scope에 account_email을 추가해줬더니 정상 동작했다.
         User user = saveOrUpdate(attributes);
 
         /*

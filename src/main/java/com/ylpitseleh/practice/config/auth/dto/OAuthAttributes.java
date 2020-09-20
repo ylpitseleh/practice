@@ -6,8 +6,7 @@ import lombok.Getter;
 
 import java.util.Map;
 /**
- * OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스이다.
- * 이후 네이버 등 다른 소셜 로그인도 이 클래스를 사용한다.
+ * OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스이다. 이후 네이버 등 다른 소셜 로그인도 이 클래스를 사용한다.
  */
 @Getter
 public class OAuthAttributes {

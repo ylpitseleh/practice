@@ -5,7 +5,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+/*
+소셜 로그인 관련 = SecurityConfig.java, OAuthAttributes.java, CustomOAuth2UserService.java
+@LoginUser 사용하기 관련 = LoginUser.java, LoginUserArgumentResolver.java, WebConfig.java
+ */
 @RequiredArgsConstructor
 @EnableWebSecurity //Spring Security 설정들을 활성화 시킨다.
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
